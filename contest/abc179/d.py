@@ -9,7 +9,7 @@ for i in range(k):
 dp = [0 for i in range(n)]
 dp[0] = 1
 
-for i in range(1, n):
+for i in range(0, n - 1):
     dp[i] = dp[i - 1]
     for j in range(k):
         if r[j] >= 0:
