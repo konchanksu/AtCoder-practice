@@ -1,8 +1,9 @@
-n = int(input())
-a = list(map(int, input().split()))
-num = 1
-for i in a:
-    if i == num:
-        num += 1
-    
-print(len(a) - num + 1 if num != 1 else -1)
+N = int(input())
+A = list(map(int, input().split()))
+now = 0
+
+for a in A:
+    if now+1 == a:
+        now += 1
+
+print(N - now if now else -1)

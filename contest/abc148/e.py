@@ -1,5 +1,5 @@
 N = int(input())
-
+ 
 if N % 2:
     print(0)
 else:
@@ -10,3 +10,4 @@ else:
         i *= 5
     
     print(ans)
+
