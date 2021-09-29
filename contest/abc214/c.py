@@ -1,8 +1,21 @@
-H, W, N = map(int, input().split())
-point = [tuple(map(int, input().split())) for _ in range(N)]
+n = int(input())
+S = list(map(int, input().split()))
+T = list(map(int, input().split()))
+inf = float("inf")
+ans = [inf for _ in range(n)]
+now = inf
 
-a = {j:i for i, j in enumerate(sorted(set(map(lambda x:x[0], point))), start=1)}
-b = {j:i for i, j in enumerate(sorted(set(map(lambda x:x[1], point))), start=1)}
+for i in range(n):
+    if now > T[i]:
+        now = T[i]
+    ans[i] = now
+    now += S[i]
 
-for i in point:
-    print(a[i[0]], b[i[1]])
+for i in range(n):
+    if now > T[i]:
+        now = T[i]
+    ans[i] = now
+    now += S[i]
+
+[print(i) for i in ans]
+

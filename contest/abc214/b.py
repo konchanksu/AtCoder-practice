@@ -1,6 +1,10 @@
-N = int(input())
-A = list(map(int, input().split()))
+s, t = map(int, input().split())
+ans = 0
 
-d = {a:i for i, a in enumerate(A, start=1)}
+for i in range(s+1):
+    for j in range(s+1-i):
+        for k in range(s+1-i-j):
+            if i*j*k <= t:
+                ans += 1
 
-print(d[sorted(A)[-2]])
+print(ans)
